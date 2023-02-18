@@ -6,11 +6,11 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 15:21:03 by mrami             #+#    #+#             */
-/*   Updated: 2023/02/18 15:34:04 by mrami            ###   ########.fr       */
+/*   Updated: 2023/02/18 19:08:21 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_utils.h"
+#include"pushSwap.h"
 
 // check if thieres an alphabitic
 
@@ -30,9 +30,19 @@ int	ft_check_alpha(int args, char const *argv[])
 	return (0);
 }
 
+// check the max and min
+
 int	ft_check_max_min(long num)
 {
 	if (num <= INT_MIN || num >= INT_MAX)
 		return (1);
 	return (0);
+}
+
+// print Error
+
+void	ft_print_error(char *err)
+{
+	write(2, err, ft_strlen(err));
+	exit (1);
 }

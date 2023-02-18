@@ -6,11 +6,11 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:08:01 by mrami             #+#    #+#             */
-/*   Updated: 2023/02/15 14:29:09 by mrami            ###   ########.fr       */
+/*   Updated: 2023/02/18 16:01:32 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_utils.h"
+#include"pushSwap.h"
 
 int	ft_words_conut(char *str, int c)
 {

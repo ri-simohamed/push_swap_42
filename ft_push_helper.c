@@ -6,11 +6,11 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:19:59 by mrami             #+#    #+#             */
-/*   Updated: 2023/02/18 15:47:04 by mrami            ###   ########.fr       */
+/*   Updated: 2023/02/18 19:14:46 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_utils.h"
+#include "pushSwap.h"
 
 size_t	ft_strlen(const char *s)
 {
@@ -68,7 +68,7 @@ int	ft_isalpha(int c)
 		return (1);
 	}
 	return (0);
-}	
+}
 
 int	ft_atoi(const char *str)
 {
@@ -77,10 +77,10 @@ int	ft_atoi(const char *str)
 	int		sign;
 
 	i = 0;
-	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t'
-		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
-		i++;
 	sign = 1;
+	if ((str[i] == '-' && str[i + 1] == '-')
+		|| (str[i] == '+' && str[i + 1] == '+'))
+		ft_print_error("Error: plus than one (-) or (+) Found!");
 	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
@@ -94,9 +94,6 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	if (ft_check_max_min(num) && (sign == 1 || sign == -1))
-	{
-		write(1, "Error: Big number Found!", 25);
-		exit (1);
-	}
+		ft_print_error("Error: Big number Found!");
 	return (sign * num);
 }

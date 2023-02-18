@@ -6,11 +6,11 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 21:22:29 by mrami             #+#    #+#             */
-/*   Updated: 2023/02/18 15:21:13 by mrami            ###   ########.fr       */
+/*   Updated: 2023/02/18 19:15:22 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_utils.h"
+#include"pushSwap.h"
 
 // get lenght of args
 
@@ -39,7 +39,6 @@ char	*ft_get_all_args(int argc, char const *argv[])
 	char	*total_args;
 	int		j;
 	size_t	arg_len;
-
 
 	total_len = ft_lenght_args(argc, argv);
 	total_args = malloc(total_len + 1);
@@ -71,8 +70,7 @@ int	*ft_split_to_atio(int argc, char const *argv[])
 
 	if (ft_check_alpha(argc, argv))
 	{
-		write(1, "Error: charcter found!\n", 24);
-		exit (1);
+		ft_print_error("Error: charcter found!\n");
 	}
 	arg = ft_get_all_args(argc, argv);
 	spliter = ft_split(arg, ' ');
@@ -92,7 +90,7 @@ int	*ft_split_to_atio(int argc, char const *argv[])
 int	main(int argc, char const *argv[])
 {
 	int	*res;
-	int i;
+	int	i;
 
 	i = 0;
 	res = ft_split_to_atio(argc, argv);

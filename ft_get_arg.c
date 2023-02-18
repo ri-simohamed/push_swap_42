@@ -6,11 +6,13 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 21:22:29 by mrami             #+#    #+#             */
-/*   Updated: 2023/02/15 15:14:47 by mrami            ###   ########.fr       */
+/*   Updated: 2023/02/18 15:21:13 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_utils.h"
+
+// get lenght of args
 
 int	ft_lenght_args(int argc, char const *argv[])
 {
@@ -28,6 +30,8 @@ int	ft_lenght_args(int argc, char const *argv[])
 	return (total_len);
 }
 
+// get all args and jion to space
+
 char	*ft_get_all_args(int argc, char const *argv[])
 {
 	int		total_len;
@@ -35,6 +39,7 @@ char	*ft_get_all_args(int argc, char const *argv[])
 	char	*total_args;
 	int		j;
 	size_t	arg_len;
+
 
 	total_len = ft_lenght_args(argc, argv);
 	total_args = malloc(total_len + 1);
@@ -54,6 +59,8 @@ char	*ft_get_all_args(int argc, char const *argv[])
 	return (total_args);
 }
 
+// slplit by space and convert  to int
+
 int	*ft_split_to_atio(int argc, char const *argv[])
 {
 	char	*arg;
@@ -62,15 +69,14 @@ int	*ft_split_to_atio(int argc, char const *argv[])
 	int		num_ints;
 	int		*results;
 
+	if (ft_check_alpha(argc, argv))
+	{
+		write(1, "Error: charcter found!\n", 24);
+		exit (1);
+	}
 	arg = ft_get_all_args(argc, argv);
 	spliter = ft_split(arg, ' ');
-	num_ints = 0;
-	i = 0;
-	while (spliter[i] != NULL)
-	{
-		num_ints++;
-		i++;
-	}
+	num_ints = ft_lenght_args(argc, argv);
 	results = (int *)malloc(sizeof(int) * num_ints);
 	i = 0;
 	while (spliter[i] != NULL)
@@ -85,16 +91,15 @@ int	*ft_split_to_atio(int argc, char const *argv[])
 
 int	main(int argc, char const *argv[])
 {
-	int *res;
+	int	*res;
 	int i;
+
 	i = 0;
 	res = ft_split_to_atio(argc, argv);
 	while (i < argc - 1)
 	{
-		printf("%d\n", *res);
-		i++;
+		printf("%d\n", res[i++]);
 	}
 	free(res);
 	return (0);
 }
-

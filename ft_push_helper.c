@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:19:59 by mrami             #+#    #+#             */
-/*   Updated: 2023/02/15 14:59:44 by mrami            ###   ########.fr       */
+/*   Updated: 2023/02/18 15:47:04 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,15 @@ char	*ft_strdup(const char *s1)
 	return (str);
 }
 
+int	ft_isalpha(int c)
+{
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+	{
+		return (1);
+	}
+	return (0);
+}	
+
 int	ft_atoi(const char *str)
 {
 	long	i;
@@ -83,6 +92,11 @@ int	ft_atoi(const char *str)
 	{
 		num = 10 * num + str[i] - '0';
 		i++;
+	}
+	if (ft_check_max_min(num) && (sign == 1 || sign == -1))
+	{
+		write(1, "Error: Big number Found!", 25);
+		exit (1);
 	}
 	return (sign * num);
 }

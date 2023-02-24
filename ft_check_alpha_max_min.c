@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 15:21:03 by mrami             #+#    #+#             */
-/*   Updated: 2023/02/18 19:08:21 by mrami            ###   ########.fr       */
+/*   Updated: 2023/02/24 21:49:00 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_check_alpha(int args, char const *argv[])
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (ft_isalpha(str[i]))
+		if (!ft_isalpha(str[i]) && str[i] != ' ')
 			return (1);
 		i++;
 	}

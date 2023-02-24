@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 21:22:29 by mrami             #+#    #+#             */
-/*   Updated: 2023/02/18 19:15:22 by mrami            ###   ########.fr       */
+/*   Updated: 2023/02/24 21:47:01 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,7 @@ int	*ft_split_to_atio(int argc, char const *argv[])
 	int		*results;
 
 	if (ft_check_alpha(argc, argv))
-	{
 		ft_print_error("Error: charcter found!\n");
-	}
 	arg = ft_get_all_args(argc, argv);
 	spliter = ft_split(arg, ' ');
 	num_ints = ft_lenght_args(argc, argv);

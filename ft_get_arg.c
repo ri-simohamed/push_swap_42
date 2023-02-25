@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 21:22:29 by mrami             #+#    #+#             */
-/*   Updated: 2023/02/25 15:41:23 by mrami            ###   ########.fr       */
+/*   Updated: 2023/02/25 16:32:16 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ char	*ft_get_all_args(int argc, char const *argv[])
 
 // slplit by space and convert  to int
 
-int	*ft_split_to_atio(int argc, char const *argv[])
+void	ft_split_to_atio(int argc, char const *argv[], t_stack *stack_a)
 {
 	char	*arg;
 	char	**spliter;
@@ -72,7 +72,7 @@ int	*ft_split_to_atio(int argc, char const *argv[])
 		ft_print_error("Error: charcter found!\n");
 	arg = ft_get_all_args(argc, argv);
 	spliter = ft_split(arg, ' ');
-	num_ints = ft_lenght_args(argc, argv);
+	num_ints = ft_length_of_spliter(spliter);
 	results = (int *)malloc(sizeof(int) * num_ints);
 	i = 0;
 	while (spliter[i] != NULL)
@@ -82,22 +82,23 @@ int	*ft_split_to_atio(int argc, char const *argv[])
 		i++;
 	}
 	free(spliter);
-	if (ft_check_dup(results))
+	if (ft_check_dup(results, num_ints))
 		ft_print_error("Error: Duplicaite index Found!");
-	return (results);
+	stack_a->stack = results;
+	stack_a->counter = num_ints;
 }
 
 int	main(int argc, char const *argv[])
 {
-	int	*res;
-	int	i;
+	t_stack	stack_a;
+	int		*res;
+	int		i;
 
 	i = 0;
-	res = ft_split_to_atio(argc, argv);
-	while (i < argc - 1)
+	ft_split_to_atio(argc, argv, &stack_a);
+	while (i < stack_a.counter)
 	{
-		printf("%d\n", res[i]);
-		i++;
+		printf("%d\n", stack_a.stack[i++]);
 	}
 	free(res);
 	return (0);

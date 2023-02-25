@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 15:21:03 by mrami             #+#    #+#             */
-/*   Updated: 2023/02/25 15:37:46 by mrami            ###   ########.fr       */
+/*   Updated: 2023/02/25 16:20:14 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,11 @@ void	ft_print_error(char *err)
 
 // check duplication
 
-int	ft_check_dup(int *arr)
+int	ft_check_dup(int *arr, int len)
 {
 	int	i;
 	int	j;
-	int	len;
 
-	i = 0;
-	while (arr[i])
-		i++;
-	len = i;
 	i = 0;
 	while (i < len)
 	{
@@ -72,4 +67,16 @@ int	ft_check_dup(int *arr)
 		i++;
 	}
 	return (0);
+}
+
+// lenght of spliter
+
+int	ft_length_of_spliter(char **spl)
+{
+	int	i;
+
+	i = 0;
+	while (spl[i])
+		i++;
+	return (i);
 }

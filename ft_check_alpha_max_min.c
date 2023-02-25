@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 15:21:03 by mrami             #+#    #+#             */
-/*   Updated: 2023/02/25 16:20:14 by mrami            ###   ########.fr       */
+/*   Updated: 2023/02/25 16:35:50 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,17 @@ void	ft_print_error(char *err)
 	exit (1);
 }
 
+// lenght of spliter
+
+int	ft_length_of_spliter(char **spl)
+{
+	int	i;
+
+	i = 0;
+	while (spl[i])
+		i++;
+	return (i);
+}
 // check duplication
 
 int	ft_check_dup(int *arr, int len)
@@ -67,16 +78,4 @@ int	ft_check_dup(int *arr, int len)
 		i++;
 	}
 	return (0);
-}
-
-// lenght of spliter
-
-int	ft_length_of_spliter(char **spl)
-{
-	int	i;
-
-	i = 0;
-	while (spl[i])
-		i++;
-	return (i);
 }

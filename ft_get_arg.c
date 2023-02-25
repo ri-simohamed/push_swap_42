@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 21:22:29 by mrami             #+#    #+#             */
-/*   Updated: 2023/02/24 21:47:01 by mrami            ###   ########.fr       */
+/*   Updated: 2023/02/25 15:41:23 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,8 @@ int	*ft_split_to_atio(int argc, char const *argv[])
 		i++;
 	}
 	free(spliter);
+	if (ft_check_dup(results))
+		ft_print_error("Error: Duplicaite index Found!");
 	return (results);
 }
 
@@ -94,7 +96,8 @@ int	main(int argc, char const *argv[])
 	res = ft_split_to_atio(argc, argv);
 	while (i < argc - 1)
 	{
-		printf("%d\n", res[i++]);
+		printf("%d\n", res[i]);
+		i++;
 	}
 	free(res);
 	return (0);

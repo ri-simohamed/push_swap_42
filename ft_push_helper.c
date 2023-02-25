@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:19:59 by mrami             #+#    #+#             */
-/*   Updated: 2023/02/24 21:48:10 by mrami            ###   ########.fr       */
+/*   Updated: 2023/02/24 21:52:12 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ char	*ft_strdup(const char *s1)
 	return (str);
 }
 
-int	ft_isalpha(int c)
+int	ft_isdegit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);

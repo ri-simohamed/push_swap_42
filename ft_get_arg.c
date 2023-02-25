@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 21:22:29 by mrami             #+#    #+#             */
-/*   Updated: 2023/02/25 16:53:59 by mrami            ###   ########.fr       */
+/*   Updated: 2023/02/25 19:06:18 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,9 @@ void	ft_split_to_atio(int argc, char const *argv[], t_stack *stack_a)
 	int		num_ints;
 	int		*results;
 
-	if (ft_check_alpha(argc, argv))
-		ft_print_error("Error: charcter found!\n");
 	arg = ft_get_all_args(argc, argv);
+	if (ft_check_alpha(arg))
+		ft_print_error("Error: Not nimirc number Found!.");
 	spliter = ft_split(arg, ' ');
 	num_ints = ft_length_of_spliter(spliter);
 	results = (int *)malloc(sizeof(int) * num_ints);
@@ -83,7 +83,7 @@ void	ft_split_to_atio(int argc, char const *argv[], t_stack *stack_a)
 	}
 	free(spliter);
 	if (ft_check_dup(results, num_ints))
-		ft_print_error("Error: Duplicaite index Found!");
+		ft_print_error("Error: Duplicaite index Found!.");
 	stack_a->stack = results;
 	stack_a->counter = num_ints;
 }

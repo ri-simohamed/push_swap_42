@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:19:59 by mrami             #+#    #+#             */
-/*   Updated: 2023/02/24 21:52:12 by mrami            ###   ########.fr       */
+/*   Updated: 2023/02/25 18:50:01 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	ft_isdegit(int c)
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+int	ft_atoi(char *str)
 {
 	long	i;
 	long	num;

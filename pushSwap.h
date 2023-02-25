@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 16:00:14 by mrami             #+#    #+#             */
-/*   Updated: 2023/02/25 16:28:59 by mrami            ###   ########.fr       */
+/*   Updated: 2023/02/25 20:35:18 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ size_t	ft_strlen(const char *s);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	ft_print_error(char *err);
 char	*ft_strdup(const char *s1);
-int		ft_atoi(const char *str);
+int		ft_atoi(char *str);
 int		ft_check_dup(int *arr, int len);
 int		ft_words_conut(char *str, int c);
 int		ft_isdegit(int c);
-int		ft_check_alpha(int args, char const *argv[]);
+int		ft_check_alpha(char *str);
 int		ft_check_max_min(long num);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	**ft_free(char **dst, int len);

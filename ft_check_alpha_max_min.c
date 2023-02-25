@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 15:21:03 by mrami             #+#    #+#             */
-/*   Updated: 2023/02/25 16:35:50 by mrami            ###   ########.fr       */
+/*   Updated: 2023/02/25 19:13:36 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 // check if thieres an alphabitic
 
-int	ft_check_alpha(int args, char const *argv[])
+int	ft_check_alpha(char *str)
 {
-	char	*str;
-	int		i;
+	int	i;
 
-	str = ft_get_all_args(args, argv);
 	i = 0;
-	while (str[i] != '\0')
+	while (str[i])
 	{
-		if (!ft_isdegit(str[i]) && str[i] != ' ')
+		if ((!ft_isdegit(str[i]) && str[i] != ' ')
+			&& (str[i] != '+' && str[i + 1] != '+')
+			&& (str[i] != '-' && str[i + 1] != '-'))
 			return (1);
 		i++;
 	}

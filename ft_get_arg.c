@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 21:22:29 by mrami             #+#    #+#             */
-/*   Updated: 2023/02/25 19:06:18 by mrami            ###   ########.fr       */
+/*   Updated: 2023/03/02 17:32:49 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	ft_split_to_atio(int argc, char const *argv[], t_stack *stack_a)
 
 	arg = ft_get_all_args(argc, argv);
 	if (ft_check_alpha(arg))
-		ft_print_error("Error: Not nimirc number Found!.");
+		ft_print_error("Error: Charcter Found!.");
 	spliter = ft_split(arg, ' ');
 	num_ints = ft_length_of_spliter(spliter);
 	results = (int *)malloc(sizeof(int) * num_ints);
@@ -95,9 +95,9 @@ int	main(int argc, char const *argv[])
 
 	i = 0;
 	ft_split_to_atio(argc, argv, &stack_a);
+	ft_swap_to_a(&stack_a, stack_a.counter);
+	// ft_rotet_rev(&stack_a, stack_a.counter);
 	while (i < stack_a.counter)
-	{
 		printf("%d\n", stack_a.stack[i++]);
-	}
 	return (0);
 }

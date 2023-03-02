@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 16:00:14 by mrami             #+#    #+#             */
-/*   Updated: 2023/02/25 20:35:18 by mrami            ###   ########.fr       */
+/*   Updated: 2023/03/02 17:09:08 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 typedef struct s_stack
 {
 	int	*stack;
+	int	*temp_stack;
 	int	counter;
 }t_stack;
 
@@ -44,5 +45,13 @@ char	*ft_get_all_args(int argc, char const *argv[]);
 char	*ft_get_all_args(int argc, char const *argv[]);
 void	ft_split_to_atio(int argc, char const *argv[], t_stack *stack_a);
 int		ft_length_of_spliter(char **spl);
+void	ft_swap_to_a(t_stack *stack_a, int size_a);
+void	ft_swap_to_b(t_stack *stack_b, int size_b);
+void	ft_swap(t_stack *stact_a, int size);
+void	ft_rotate(t_stack *stack_r, int len);
+void	ft_rotet_a(t_stack *stack_a, int size_a);
+void	ft_rotet_b(t_stack *stack_b, int size_b);
+void	ft_rotet_rev(t_stack *stack_rv, int len);
+
 
 #endif // !PUSHSWAP_H

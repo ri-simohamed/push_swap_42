@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 21:22:29 by mrami             #+#    #+#             */
-/*   Updated: 2023/03/02 17:32:49 by mrami            ###   ########.fr       */
+/*   Updated: 2023/03/04 21:06:49 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,13 +91,20 @@ void	ft_split_to_atio(int argc, char const *argv[], t_stack *stack_a)
 int	main(int argc, char const *argv[])
 {
 	t_stack	stack_a;
+	t_stack	stack_b;
 	int		i;
 
 	i = 0;
 	ft_split_to_atio(argc, argv, &stack_a);
-	ft_swap_to_a(&stack_a, stack_a.counter);
-	// ft_rotet_rev(&stack_a, stack_a.counter);
+	// ft_swap_to_a(&stack_a);
+	// ft_rotet_rev_a(&stack_a);
+	// ft_rotet_a(&stack_a);
+	ft_push_to_a(&stack_a, &stack_b);
+	printf("->%d\n", stack_b.stack[0]);
 	while (i < stack_a.counter)
-		printf("%d\n", stack_a.stack[i++]);
+	{
+		printf("%d\n", stack_a.stack[i]);
+		i++;
+	}
 	return (0);
 }

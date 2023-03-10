@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 16:47:31 by mrami             #+#    #+#             */
-/*   Updated: 2023/03/04 21:07:13 by mrami            ###   ########.fr       */
+/*   Updated: 2023/03/06 12:03:36 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,20 +73,3 @@ void	ft_rotet_rev_b(t_stack *stack_b)
 
 /* push the top of stack A to the top of stack B */
 
-void	ft_push_to_a(t_stack *stack_a, t_stack *stack_b)
-{
-	int	len_a;
-	int	len_b;
-	int	temp;
-
-	len_a = stack_a->counter;
-	len_b = stack_b->counter;
-	if (len_a == 0)
-		ft_print_error("stack A no found!");
-	temp = stack_a->stack[0];
-	len_b++;
-	len_a--;
-	stack_b->stack = malloc((len_b + 1) * sizeof(int));
-	if (!stack_b->stack)
-		ft_print_error("No stack B A'Location.");
-}

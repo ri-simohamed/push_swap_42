@@ -6,13 +6,13 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 21:22:29 by mrami             #+#    #+#             */
-/*   Updated: 2023/03/04 21:06:49 by mrami            ###   ########.fr       */
+/*   Updated: 2023/03/10 18:38:49 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"pushSwap.h"
 
-// get lenght of args
+/* get lenght of args */
 
 int	ft_lenght_args(int argc, char const *argv[])
 {
@@ -30,7 +30,7 @@ int	ft_lenght_args(int argc, char const *argv[])
 	return (total_len);
 }
 
-// get all args and jion to space
+/* get all args and jion to space */
 
 char	*ft_get_all_args(int argc, char const *argv[])
 {
@@ -41,6 +41,8 @@ char	*ft_get_all_args(int argc, char const *argv[])
 	size_t	arg_len;
 
 	total_len = ft_lenght_args(argc, argv);
+	if (total_len <= 0)
+		ft_print_error("Error");
 	total_args = malloc(total_len + 1);
 	if (total_args == NULL)
 		return (NULL);
@@ -58,7 +60,7 @@ char	*ft_get_all_args(int argc, char const *argv[])
 	return (total_args);
 }
 
-// slplit by space and convert  to int
+/* slplit by space and convert  to int */
 
 void	ft_split_to_atio(int argc, char const *argv[], t_stack *stack_a)
 {
@@ -70,7 +72,7 @@ void	ft_split_to_atio(int argc, char const *argv[], t_stack *stack_a)
 
 	arg = ft_get_all_args(argc, argv);
 	if (ft_check_alpha(arg))
-		ft_print_error("Error: Charcter Found!.");
+		ft_print_error("Error");
 	spliter = ft_split(arg, ' ');
 	num_ints = ft_length_of_spliter(spliter);
 	results = (int *)malloc(sizeof(int) * num_ints);
@@ -83,7 +85,7 @@ void	ft_split_to_atio(int argc, char const *argv[], t_stack *stack_a)
 	}
 	free(spliter);
 	if (ft_check_dup(results, num_ints))
-		ft_print_error("Error: Duplicaite index Found!.");
+		ft_print_error("Error");
 	stack_a->stack = results;
 	stack_a->counter = num_ints;
 }
@@ -91,16 +93,27 @@ void	ft_split_to_atio(int argc, char const *argv[], t_stack *stack_a)
 int	main(int argc, char const *argv[])
 {
 	t_stack	stack_a;
-	t_stack	stack_b;
 	int		i;
+	int		j;
+	t_stack	stack_b;
+
+	stack_b.stack = 0;
 
 	i = 0;
+	j = 0;
 	ft_split_to_atio(argc, argv, &stack_a);
-	// ft_swap_to_a(&stack_a);
+	// ft_sort_thri_num(&stack_a);
+	// ft_sort_five_num(&stack_a, &stack_b);
 	// ft_rotet_rev_a(&stack_a);
-	// ft_rotet_a(&stack_a);
-	ft_push_to_a(&stack_a, &stack_b);
-	printf("->%d\n", stack_b.stack[0]);
+	// ft_rotet_rev_a(&stack_a);
+	ft_max_to_top(&stack_a, &stack_b);
+	ft_max_to_top(&stack_a, &stack_b);
+	ft_sort_thri_num(&stack_a);
+	while (j < stack_b.counter)
+	{
+		printf("%d\n", stack_b.stack[j++]);
+	}
+	printf("----------------\n");
 	while (i < stack_a.counter)
 	{
 		printf("%d\n", stack_a.stack[i]);

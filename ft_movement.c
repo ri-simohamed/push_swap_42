@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 16:24:43 by mrami             #+#    #+#             */
-/*   Updated: 2023/03/04 14:49:14 by mrami            ###   ########.fr       */
+/*   Updated: 2023/03/07 17:03:03 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ void	ft_swap_to_a(t_stack *stack_a)
 		ft_swap(stack_a, size_a);
 		write(1, "sa\n", 3);
 	}
-	else
-		write(1, "sa\n", 3);
 }
 /* swap tow first element of the stack B */
 

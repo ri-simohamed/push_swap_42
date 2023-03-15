@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 21:22:29 by mrami             #+#    #+#             */
-/*   Updated: 2023/03/15 15:54:04 by mrami            ###   ########.fr       */
+/*   Updated: 2023/03/15 16:46:37 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,14 +100,15 @@ int	main(int argc, char const *argv[])
 
 	i = 0;
 	ft_split_to_atio(argc, argv, &stack_a);
-	if (stack_a.counter == 3)
+	if (stack_a.counter <= 3)
 		ft_sort_thri_num(&stack_a);
-	ft_sort_five(&stack_a, &stack_b);
-	printf("----------------\n");
-	while (i < stack_a.counter)
-	{
-		printf("%d\n", stack_a.stack[i]);
-		i++;
-	}
+	else
+		ft_sort_five(&stack_a, &stack_b);
+	// printf("----------------\n");
+	// while (i < stack_a.counter)
+	// {
+	// 	printf("%d\n", stack_a.stack[i]);
+	// 	i++;
+	// }
 	return (0);
 }

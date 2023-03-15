@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 18:18:49 by mrami             #+#    #+#             */
-/*   Updated: 2023/03/15 15:36:20 by mrami            ###   ########.fr       */
+/*   Updated: 2023/03/15 16:40:27 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,30 +102,4 @@ int	ft_index_of_min(t_stack *stack1)
 		i++;
 	}
 	return (index);
-}
-
-/* sort five randem number */
-
-void	ft_sort_five(t_stack *stack1, t_stack *stack2)
-{
-	int	index_min;
-
-	while (stack1->counter > 3)
-	{
-		index_min = ft_index_of_min(stack1);
-		if (index_min == 0)
-		{
-			ft_push(stack1, stack2);
-			write(1, "pb\n", 3);
-		}
-		else if (index_min == 1)
-			ft_swap_to_a(stack1);
-		else if (index_min >= stack1->counter / 2)
-			ft_rotet_rev_a(stack1);
-	}
-	ft_sort_thri_num(stack1);
-	ft_push(stack2, stack1);
-	write(1, "pa\n", 3);
-	ft_push(stack2, stack1);
-	write(1, "pa\n", 3);
 }

@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 18:18:49 by mrami             #+#    #+#             */
-/*   Updated: 2023/03/10 18:31:26 by mrami            ###   ########.fr       */
+/*   Updated: 2023/03/15 15:36:20 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,58 +84,48 @@ int	ft__get_min_of_stack(t_stack *stack1)
 
 /* get the min of arry to top */
 
-int	ft_index_of_max(t_stack *stack1)
+int	ft_index_of_min(t_stack *stack1)
 {
-	int	max_num;
+	int	min_num;
 	int	index;
 	int	i;
 	int	len;
 
-	max_num = ft_get_max_of_stack(stack1);
+	min_num = ft__get_min_of_stack(stack1);
 	len = stack1->counter;
 	index = -1;
 	i = 0;
 	while (i < len)
 	{
-		if (stack1->stack[i] == max_num)
+		if (stack1->stack[i] == min_num)
 			index = i;
 		i++;
 	}
 	return (index);
 }
 
-/* max number of stack in top and push to stack B */
+/* sort five randem number */
 
-void	ft_max_to_top(t_stack *stack1, t_stack *stack2)
+void	ft_sort_five(t_stack *stack1, t_stack *stack2)
 {
-	int	len;
-	// int	i;
-	int	index;
+	int	index_min;
 
-	len = stack1->counter;
-	index = ft_index_of_max(stack1);
-	if (index > len / 2)
-		write(1, "yes\n", 4);
-	if (index < len / 2)
+	while (stack1->counter > 3)
 	{
-		if (index == 0)
+		index_min = ft_index_of_min(stack1);
+		if (index_min == 0)
 		{
 			ft_push(stack1, stack2);
 			write(1, "pb\n", 3);
 		}
-		if (index == 1)
-		{
+		else if (index_min == 1)
 			ft_swap_to_a(stack1);
-			ft_push(stack1, stack2);
-			write(1, "pb\n", 3);
-		}
+		else if (index_min >= stack1->counter / 2)
+			ft_rotet_rev_a(stack1);
 	}
-	if (index == len / 2)
-	{
-		ft_rotet_rev_a(stack1);
-		ft_rotet_rev_a(stack1);
-		ft_rotet_rev_a(stack1);
-		ft_push(stack1, stack2);
-		write(1, "pb\n", 3);
-	}
+	ft_sort_thri_num(stack1);
+	ft_push(stack2, stack1);
+	write(1, "pa\n", 3);
+	ft_push(stack2, stack1);
+	write(1, "pa\n", 3);
 }

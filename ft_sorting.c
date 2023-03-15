@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 15:03:55 by mrami             #+#    #+#             */
-/*   Updated: 2023/03/09 16:15:18 by mrami            ###   ########.fr       */
+/*   Updated: 2023/03/13 18:46:39 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,3 @@ void	ft_sort_thri_num(t_stack *stack1)
 	if (min_num == stack1->stack[len - 1] && max_num == stack1->stack[1])
 		ft_rotet_rev_a(stack1);
 }
-
-/* sort an stack then five number */
-
-// void	ft_sort_five_num(t_stack *stack1, t_stack *stack2)
-// {
-// 	int	len;
-// }

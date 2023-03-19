@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 15:03:55 by mrami             #+#    #+#             */
-/*   Updated: 2023/03/15 16:47:39 by mrami            ###   ########.fr       */
+/*   Updated: 2023/03/19 14:46:14 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_thriesorting(t_stack *stack1, int max_num, int min_num)
 		ft_rotet_rev_a(stack1);
 	}
 	if (max_num == stack1->stack[0] && min_num == stack1->stack[1])
-		ft_swap_to_a(stack1);
+		ft_rotet_rev_a(stack1);
 	if (min_num == stack1->stack[0] && max_num == stack1->stack[1])
 	{
 		ft_swap_to_a(stack1);
@@ -75,8 +75,25 @@ void	ft_sort_five(t_stack *stack1, t_stack *stack2)
 			ft_rotet_rev_a(stack1);
 	}
 	ft_sort_thri_num(stack1);
-	ft_push(stack2, stack1);
-	write(1, "pa\n", 3);
-	ft_push(stack2, stack1);
-	write(1, "pa\n", 3);
+	while (stack2->counter != 0)
+	{
+		ft_push(stack2, stack1);
+		write(1, "pa\n", 3);
+	}
+}
+
+/* sort big number 100 */
+
+void	ft_sort_big(t_stack *stack1, t_stack *stack2)
+{
+	int	i;
+
+	i = 0;
+	while (stack1->stack[i] < 25)
+	{
+		printf("-->%d\n", stack1->stack[i]);
+		ft_push(stack1, stack2);
+		write(1, "pb\n", 3);
+		i++;
+	}
 }

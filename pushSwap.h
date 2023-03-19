@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 16:00:14 by mrami             #+#    #+#             */
-/*   Updated: 2023/03/13 22:29:32 by mrami            ###   ########.fr       */
+/*   Updated: 2023/03/19 14:36:36 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,7 @@ int		ft__get_min_of_stack(t_stack *stack1);
 void	ft_sort_thri_num(t_stack *stack1);
 int		ft_index_of_min(t_stack *stack1);
 void	ft_sort_five(t_stack *stack1, t_stack *stack2);
+int		ft_check_sorting(t_stack *stack1);
+void	ft_sort_big(t_stack *stack1, t_stack *stack2);
 
 #endif // !PUSHSWAP_H

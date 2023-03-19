@@ -6,11 +6,11 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 18:18:49 by mrami             #+#    #+#             */
-/*   Updated: 2023/03/15 16:40:27 by mrami            ###   ########.fr       */
+/*   Updated: 2023/03/16 15:39:39 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"pushSwap.h"
+#include "pushSwap.h"
 
 /* push top of an stack to the top of another stack */
 
@@ -102,4 +102,28 @@ int	ft_index_of_min(t_stack *stack1)
 		i++;
 	}
 	return (index);
+}
+
+/* check if an stack it's sorting or no */
+
+int	ft_check_sorting(t_stack *stack1)
+{
+	int	i;
+	int	j;
+	int	len;
+
+	len = stack1->counter;
+	i = 0;
+	while (i < len)
+	{
+		j = i + 1;
+		while (j < len)
+		{
+			if (stack1->stack[i] > stack1->stack[j])
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
 }

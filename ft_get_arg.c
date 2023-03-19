@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 21:22:29 by mrami             #+#    #+#             */
-/*   Updated: 2023/03/15 16:46:37 by mrami            ###   ########.fr       */
+/*   Updated: 2023/03/19 14:39:44 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,16 +99,24 @@ int	main(int argc, char const *argv[])
 	stack_b.stack = 0;
 
 	i = 0;
+	int j = 0;
 	ft_split_to_atio(argc, argv, &stack_a);
-	if (stack_a.counter <= 3)
-		ft_sort_thri_num(&stack_a);
-	else
-		ft_sort_five(&stack_a, &stack_b);
-	// printf("----------------\n");
-	// while (i < stack_a.counter)
+	ft_sort_big(&stack_a, &stack_b);
+	while (i < stack_a.counter)
+		printf("%d\n", stack_a.stack[i++]);
+	printf("-----------------\n");
+	while (j < stack_b.counter)
+		printf("%d\n", stack_b.stack[j++]);
+	// if (!ft_check_sorting(&stack_a))
 	// {
-	// 	printf("%d\n", stack_a.stack[i]);
-	// 	i++;
+	// 	while (i < stack_a.counter)
+	// 		printf("%d\n", stack_a.stack[i++]);
+	// }
+	// else
+	// {
+	// 	ft_sort_five(&stack_a, &stack_b);
+	// 	while (i < stack_a.counter)
+	// 		printf("%d\n", stack_a.stack[i++]);
 	// }
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 16:47:31 by mrami             #+#    #+#             */
-/*   Updated: 2023/03/06 12:03:36 by mrami            ###   ########.fr       */
+/*   Updated: 2023/03/16 15:03:14 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,3 @@ void	ft_rotet_rev_b(t_stack *stack_b)
 		write(1, "rrb\n", 4);
 	}
 }
-
-/* push the top of stack A to the top of stack B */
-

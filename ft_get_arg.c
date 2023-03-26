@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 21:22:29 by mrami             #+#    #+#             */
-/*   Updated: 2023/03/19 14:39:44 by mrami            ###   ########.fr       */
+/*   Updated: 2023/03/25 17:20:54 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,28 +95,17 @@ int	main(int argc, char const *argv[])
 	t_stack	stack_a;
 	int		i;
 	t_stack	stack_b;
+	int j;
+	// int move;
 
 	stack_b.stack = 0;
 
 	i = 0;
-	int j = 0;
+	j = 0;
 	ft_split_to_atio(argc, argv, &stack_a);
-	ft_sort_big(&stack_a, &stack_b);
-	while (i < stack_a.counter)
-		printf("%d\n", stack_a.stack[i++]);
+	ft_big_number(&stack_a, &stack_b);
 	printf("-----------------\n");
-	while (j < stack_b.counter)
-		printf("%d\n", stack_b.stack[j++]);
-	// if (!ft_check_sorting(&stack_a))
-	// {
-	// 	while (i < stack_a.counter)
-	// 		printf("%d\n", stack_a.stack[i++]);
-	// }
-	// else
-	// {
-	// 	ft_sort_five(&stack_a, &stack_b);
-	// 	while (i < stack_a.counter)
-	// 		printf("%d\n", stack_a.stack[i++]);
-	// }
+	while (i < stack_a.counter)
+		printf("sa->%d\n", stack_a.stack[i++]);
 	return (0);
 }

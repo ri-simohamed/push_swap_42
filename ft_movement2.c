@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 18:18:49 by mrami             #+#    #+#             */
-/*   Updated: 2023/03/16 15:39:39 by mrami            ###   ########.fr       */
+/*   Updated: 2023/03/25 17:33:42 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,28 +80,6 @@ int	ft__get_min_of_stack(t_stack *stack1)
 		i++;
 	}
 	return (min_s);
-}
-
-/* get the min of arry to top */
-
-int	ft_index_of_min(t_stack *stack1)
-{
-	int	min_num;
-	int	index;
-	int	i;
-	int	len;
-
-	min_num = ft__get_min_of_stack(stack1);
-	len = stack1->counter;
-	index = -1;
-	i = 0;
-	while (i < len)
-	{
-		if (stack1->stack[i] == min_num)
-			index = i;
-		i++;
-	}
-	return (index);
 }
 
 /* check if an stack it's sorting or no */

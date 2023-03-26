@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 16:00:14 by mrami             #+#    #+#             */
-/*   Updated: 2023/03/19 14:36:36 by mrami            ###   ########.fr       */
+/*   Updated: 2023/03/26 15:17:39 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,13 @@ void	ft_push(t_stack *stack_a, t_stack *stack_b);
 int		ft_get_max_of_stack(t_stack *stack1);
 int		ft__get_min_of_stack(t_stack *stack1);
 void	ft_sort_thri_num(t_stack *stack1);
-int		ft_index_of_min(t_stack *stack1);
 void	ft_sort_five(t_stack *stack1, t_stack *stack2);
 int		ft_check_sorting(t_stack *stack1);
-void	ft_sort_big(t_stack *stack1, t_stack *stack2);
+void	ft_move_to_top(t_stack *stack1, int numb);
+int		ft_calculate_move(t_stack *stack1, int nu);
+void	ft_check_move_stack_b(t_stack *stack2, t_stack *stack1);
+void	ft_big_number(t_stack *stack1, t_stack *stack2);
+int		ft_get_indexof_number(t_stack *stack1, int numb);
+int		ft_git_prev(t_stack *stack1, int num);
 
 #endif // !PUSHSWAP_H

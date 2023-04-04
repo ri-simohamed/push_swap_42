@@ -6,15 +6,15 @@
 #    By: mrami <mrami@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/25 16:39:21 by mrami             #+#    #+#              #
-#    Updated: 2023/03/25 17:29:33 by mrami            ###   ########.fr        #
+#    Updated: 2023/03/31 17:14:01 by mrami            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 Name = push_swap
 HEADER = pushSwap.h
 cc = cc
-CFlags = -Wall -Wextra -Werror
-CFiles = ft_check_alpha_max_min.c ft_get_arg.c ft_push_helper.c push_utils.c  ft_movement.c ft_movement1.c ft_movement2.c ft_sorting.c sort_big.c
+# CFlags = -Wall -Wextra -Werror
+CFiles = ft_check_alpha_max_min.c ft_get_arg.c ft_push_helper.c push_utils.c  ft_movement.c ft_movement1.c ft_movement2.c ft_sorting.c sort_big.c sort_big1.c
 COFiles = $(CFiles:.c=.o)
 # -----------------------------------
 all: $(Name)

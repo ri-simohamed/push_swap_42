@@ -6,11 +6,27 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 17:21:56 by mrami             #+#    #+#             */
-/*   Updated: 2023/03/25 17:24:39 by mrami            ###   ########.fr       */
+/*   Updated: 2023/03/31 17:41:16 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushSwap.h"
+
+int	ft_lenght_next(t_stack *stack1, int number)
+{
+	int	len;
+	int	i;
+
+	len = 0;
+	i = 0;
+	while (i < stack1->counter)
+	{
+		if (stack1->stack[i] > number)
+			len++;
+		i++;
+	}
+	return (len);
+}
 
 /* get the first big number */
 
@@ -20,34 +36,26 @@ int	ft_git_next(t_stack *stack1, int num)
 	int	j;
 	int	*temp_stack;
 	int	min_num;
-	int	len;
 
-	i = 0;
+	i = -1;
 	j = 0;
-	len = 0;
-	while (i < stack1->counter)
-	{
-		if (stack1->stack[i] > num)
-			len++;
-		i++;
-	}
-	temp_stack = malloc(len * sizeof(int));
+	if (ft_lenght_next(stack1, num) == 0)
+		return ft__get_min_of_stack(stack1);
+	temp_stack = malloc(ft_lenght_next(stack1, num) * sizeof(int));
 	if (!temp_stack)
 		return (0);
-	i = 0;
-	while (i < stack1->counter)
+	i = -1;
+	while (++i < stack1->counter)
 	{
 		if (stack1->stack[i] > num)
 			temp_stack[j++] = stack1->stack[i];
-		i++;
 	}
-	i = 0;
+	i = -1;
 	min_num = temp_stack[0];
-	while (i < len)
+	while (++i < ft_lenght_next(stack1, num))
 	{
 		if (temp_stack[i] < min_num)
 			min_num = temp_stack[i];
-		i++;
 	}
 	return (min_num);
 }
@@ -57,8 +65,7 @@ int	ft_git_next(t_stack *stack1, int num)
 int	ft_get_indexof_number(t_stack *stack1, int numb)
 {
 	int	i;
-	int	index;
-
+	int	index = 0;
 	i = 0;
 	while (i < stack1->counter)
 	{
@@ -81,7 +88,7 @@ void	ft_move_to_top(t_stack *stack1, int number)
 	{
 		index_number = ft_get_indexof_number(stack1, number);
 		if (index_number == 0)
-			break;
+			break ;
 		else if (index_number < (stack1->counter / 2))
 			ft_rotet_a(stack1);
 		else if (index_number >= (stack1->counter / 2))
@@ -106,44 +113,4 @@ int	ft_calculate_move(t_stack *stack1, int nu)
 	else if (nu_index >= (len / 2))
 		move = len - nu_index;
 	return (move);
-}
-
-/* loop in stack B, each number in stack B, calculate move to top + and clculate move of next to send in top */
-
-void	ft_check_move_stack_b(t_stack *stack2, t_stack *stack1)
-{
-	int	i;
-	int	next_move;
-	int	len;
-	int	min_move;
-	int	min_number;
-	int	next_numb;
-
-	len = stack2->counter;
-	i = 0;
-	while (i < len)
-	{
-		min_number = ft_get_max_of_stack(stack2);
-		next_numb = ft_git_prev(stack2, min_number);
-		min_move = ft_calculate_move(stack2, min_number);
-		next_move = ft_calculate_move(stack2, next_numb);
-		if (next_move < min_move)
-		{
-			ft_move_to_top(stack2, next_numb);
-			ft_push(stack2, stack1);
-			write(1, "pa\n", 3);
-			ft_move_to_top(stack2, min_number);
-			ft_push(stack2, stack1);
-			write(1, "pa\n", 3);
-			ft_swap_to_a(stack1);
-			i++;
-		}
-		else
-		{
-			ft_move_to_top(stack2, min_number);
-			ft_push(stack2, stack1);
-			write(1, "pa\n", 3);
-		}
-		i++;
-	}
 }

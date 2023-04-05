@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 17:21:56 by mrami             #+#    #+#             */
-/*   Updated: 2023/03/31 17:41:16 by mrami            ###   ########.fr       */
+/*   Updated: 2023/04/05 13:40:04 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	ft_git_next(t_stack *stack1, int num)
 	i = -1;
 	j = 0;
 	if (ft_lenght_next(stack1, num) == 0)
-		return ft__get_min_of_stack(stack1);
+		return (ft__get_min_of_stack(stack1));
 	temp_stack = malloc(ft_lenght_next(stack1, num) * sizeof(int));
 	if (!temp_stack)
 		return (0);
@@ -51,12 +51,7 @@ int	ft_git_next(t_stack *stack1, int num)
 			temp_stack[j++] = stack1->stack[i];
 	}
 	i = -1;
-	min_num = temp_stack[0];
-	while (++i < ft_lenght_next(stack1, num))
-	{
-		if (temp_stack[i] < min_num)
-			min_num = temp_stack[i];
-	}
+	min_num = ft_gitmin(temp_stack);
 	return (min_num);
 }
 
@@ -65,7 +60,9 @@ int	ft_git_next(t_stack *stack1, int num)
 int	ft_get_indexof_number(t_stack *stack1, int numb)
 {
 	int	i;
-	int	index = 0;
+	int	index;
+
+	index = 0;
 	i = 0;
 	while (i < stack1->counter)
 	{

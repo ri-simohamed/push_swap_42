@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 16:00:14 by mrami             #+#    #+#             */
-/*   Updated: 2023/04/05 13:49:47 by mrami            ###   ########.fr       */
+/*   Updated: 2023/04/08 17:53:33 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@
 # include<string.h>
 # include<stdio.h>
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE	10
+# endif
+
 typedef struct s_stack
 {
 	int	*stack;
@@ -27,7 +31,7 @@ typedef struct s_stack
 
 size_t	ft_strlen(const char *s);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
-void	ft_print_error(char *err);
+void	ft_print_error(const char *err);
 char	*ft_strdup(const char *s1);
 int		ft_atoi(char *str);
 int		ft_check_dup(int *arr, int len);
@@ -69,5 +73,12 @@ int		ft_gitmin(int *move);
 void	ft_move_to_top_b(t_stack *stack1, int numb);
 void	ft_sort(t_stack *stack1, t_stack *stack2);
 void	ft_help_tosort(t_stack *stack1, t_stack *stack2, int push_count);
+/*------------------ this function i'ts used for bonus part ------------------*/
+char	*ft_strchr(char *s, int c);
+char	*ft_get_line(char *str);
+char	*ft_next_str(char *r_str);
+char	*ft_strjoin(char *s1, char *s2);
+char	*ft_read_str(int fd, char *str);
+char	*get_next_line(int fd);
 
 #endif // !PUSHSWAP_H

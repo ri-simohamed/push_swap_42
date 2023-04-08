@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:19:59 by mrami             #+#    #+#             */
-/*   Updated: 2023/02/25 18:50:01 by mrami            ###   ########.fr       */
+/*   Updated: 2023/04/08 21:18:22 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	ft_atoi(char *str)
 	sign = 1;
 	if ((str[i] == '-' && str[i + 1] == '-')
 		|| (str[i] == '+' && str[i + 1] == '+'))
-		ft_print_error("Error: plus than one (-) or (+) Found!");
+		ft_print_error("Error:");
 	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
@@ -92,6 +92,6 @@ int	ft_atoi(char *str)
 		i++;
 	}
 	if (ft_check_max_min(num) && (sign == 1 || sign == -1))
-		ft_print_error("Error: Big number Found!");
+		ft_print_error("Error:");
 	return (sign * num);
 }

@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 15:21:03 by mrami             #+#    #+#             */
-/*   Updated: 2023/02/25 19:13:36 by mrami            ###   ########.fr       */
+/*   Updated: 2023/04/08 17:56:00 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_check_max_min(long num)
 
 // print Error
 
-void	ft_print_error(char *err)
+void	ft_print_error(const char *err)
 {
 	write(2, err, ft_strlen(err));
 	exit (1);

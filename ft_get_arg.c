@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 21:22:29 by mrami             #+#    #+#             */
-/*   Updated: 2023/04/05 14:06:15 by mrami            ###   ########.fr       */
+/*   Updated: 2023/04/08 21:19:54 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	ft_split_to_atio(int argc, char const *argv[], t_stack *stack_a)
 
 	arg = ft_get_all_args(argc, argv);
 	if (ft_check_alpha(arg))
-		ft_print_error("Error");
+		ft_print_error("Error:");
 	spliter = ft_split(arg, ' ');
 	num_ints = ft_length_of_spliter(spliter);
 	results = (int *)malloc(sizeof(int) * num_ints);
@@ -85,30 +85,7 @@ void	ft_split_to_atio(int argc, char const *argv[], t_stack *stack_a)
 	}
 	free(spliter);
 	if (ft_check_dup(results, num_ints))
-		ft_print_error("Error");
+		ft_print_error("Error:");
 	stack_a->stack = results;
 	stack_a->counter = num_ints;
-}
-
-int	main(int argc, char const *argv[])
-{
-	t_stack	stack_a;
-	int		i;
-	t_stack	stack_b;
-
-	stack_b.stack = 0;
-	i = 0;
-	ft_split_to_atio(argc, argv, &stack_a);
-	if (!ft_check_sorting(&stack_a))
-	{
-		while (i < stack_a.counter)
-			printf("sa->%d\n", stack_a.stack[i++]);
-	}
-	else
-	{
-		ft_big_number(&stack_a, &stack_b);
-		while (i < stack_a.counter)
-			printf("sa->%d\n", stack_a.stack[i++]);
-	}
-	return (0);
 }

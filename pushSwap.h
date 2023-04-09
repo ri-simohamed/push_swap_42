@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 16:00:14 by mrami             #+#    #+#             */
-/*   Updated: 2023/04/08 17:53:33 by mrami            ###   ########.fr       */
+/*   Updated: 2023/04/09 16:10:09 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,12 +73,21 @@ int		ft_gitmin(int *move);
 void	ft_move_to_top_b(t_stack *stack1, int numb);
 void	ft_sort(t_stack *stack1, t_stack *stack2);
 void	ft_help_tosort(t_stack *stack1, t_stack *stack2, int push_count);
-/*------------------ this function i'ts used for bonus part ------------------*/
+/* ------------ this function i'ts used for the bonus part ------------ */
 char	*ft_strchr(char *s, int c);
 char	*ft_get_line(char *str);
 char	*ft_next_str(char *r_str);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_read_str(int fd, char *str);
 char	*get_next_line(int fd);
+void	ft_swap_to_a_check(t_stack *stack_a);
+void	ft_swap_to_b_check(t_stack *stack_b);
+void	ft_rotet_a_check(t_stack *stack_a);
+void	ft_rotet_b_check(t_stack *stack_b);
+void	ft_rotet_rev_a_check(t_stack *stack_a);
+void	ft_rotet_rev_b_check(t_stack *stack_b);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+void	ft_check_actions(char *act, t_stack *stack1, t_stack *stack2);
+void	ft_checker_print(t_stack *stack1);
 
 #endif // !PUSHSWAP_H

@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 18:18:49 by mrami             #+#    #+#             */
-/*   Updated: 2023/03/25 17:33:42 by mrami            ###   ########.fr       */
+/*   Updated: 2023/04/11 01:15:53 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,9 @@ void	ft_push(t_stack *stack_a, t_stack *stack_b)
 		return ;
 	if (stack_b->counter > 0)
 		ft_memcpy(stack_b_tap + 1, stack_b->stack,
-			(count) * sizeof(int));
+			(count - 1) * sizeof(int));
 	stack_b_tap[0] = stack_a->stack[0];
 	stack_b->counter++;
-	stack_b->stack = stack_b_tap;
 	count = stack_a->counter - 1;
 	stack_a_tap = malloc((count) * sizeof(int));
 	if (!stack_a_tap)
@@ -39,6 +38,9 @@ void	ft_push(t_stack *stack_a, t_stack *stack_b)
 	ft_memcpy(stack_a_tap, stack_a->stack + 1,
 		(count) * sizeof(int));
 	stack_a->counter--;
+	free(stack_b->stack);
+	free(stack_a->stack);
+	stack_b->stack = stack_b_tap;
 	stack_a->stack = stack_a_tap;
 }
 

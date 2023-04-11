@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 22:47:53 by mrami             #+#    #+#             */
-/*   Updated: 2023/04/08 23:00:07 by mrami            ###   ########.fr       */
+/*   Updated: 2023/04/10 20:10:23 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	ft_rotet_rev_b_check(t_stack *stack_b)
 	if (len > 1)
 		ft_rotet_rev(stack_b, len);
 }
+
+/* comper to string by size */
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

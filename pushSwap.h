@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 16:00:14 by mrami             #+#    #+#             */
-/*   Updated: 2023/04/09 16:10:09 by mrami            ###   ########.fr       */
+/*   Updated: 2023/04/11 00:44:20 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int		*ft_check_move_stack_b(t_stack *stack_A, t_stack *stack_B);
 void	ft_big_number(t_stack *stack1, t_stack *stack2);
 int		ft_get_indexof_number(t_stack *stack1, int numb);
 int		ft_git_next(t_stack *stack1, int num);
-int		ft_gitmin(int *move);
+int		ft_gitmin(int *move, int size);
 void	ft_move_to_top_b(t_stack *stack1, int numb);
 void	ft_sort(t_stack *stack1, t_stack *stack2);
 void	ft_help_tosort(t_stack *stack1, t_stack *stack2, int push_count);

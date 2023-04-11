@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 17:21:56 by mrami             #+#    #+#             */
-/*   Updated: 2023/04/05 13:40:04 by mrami            ###   ########.fr       */
+/*   Updated: 2023/04/11 00:52:29 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ int	ft_git_next(t_stack *stack1, int num)
 			temp_stack[j++] = stack1->stack[i];
 	}
 	i = -1;
-	min_num = ft_gitmin(temp_stack);
+	min_num = ft_gitmin(temp_stack, ft_lenght_next(stack1, num));
+	free(temp_stack);
 	return (min_num);
 }
 

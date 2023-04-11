@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 17:03:38 by mrami             #+#    #+#             */
-/*   Updated: 2023/04/08 17:04:27 by mrami            ###   ########.fr       */
+/*   Updated: 2023/04/11 00:55:44 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	*ft_check_move_stack_b(t_stack *stack_A, t_stack *stack_B)
 	int	next_numb;
 	int	*tab;
 
-	tab = malloc(stack_B->counter * sizeof(int));
+	tab = malloc((stack_B->counter) * sizeof(int));
 	i = 0;
 	while (i < stack_B->counter)
 	{
@@ -40,14 +40,14 @@ int	*ft_check_move_stack_b(t_stack *stack_A, t_stack *stack_B)
 
 /* get min of tab than move */
 
-int	ft_gitmin(int *move)
+int	ft_gitmin(int *move, int size)
 {
 	int	min_of_move;
 	int	i;
 
 	min_of_move = move[0];
 	i = 0;
-	while (move[i])
+	while (i < size)
 	{
 		if (move[i] < min_of_move)
 			min_of_move = move[i];
@@ -88,7 +88,7 @@ void	ft_sort(t_stack *stack1, t_stack *stack2)
 	while (stack2->counter != 0)
 	{
 		move = ft_check_move_stack_b(stack1, stack2);
-		min = ft_gitmin(move);
+		min = ft_gitmin(move, stack2->counter);
 		index = 0;
 		while (move[index] != min)
 			index++;
@@ -97,6 +97,7 @@ void	ft_sort(t_stack *stack1, t_stack *stack2)
 		ft_move_to_top(stack1, ft_git_next(stack1, target));
 		ft_push(stack2, stack1);
 		write(1, "pa\n", 3);
+		free(move);
 	}
 	min_number = ft__get_min_of_stack(stack1);
 	while (stack1->stack[0] != min_number)

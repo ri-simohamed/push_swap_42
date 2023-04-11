@@ -6,7 +6,7 @@
 /*   By: mrami <mrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 21:22:29 by mrami             #+#    #+#             */
-/*   Updated: 2023/04/08 21:19:54 by mrami            ###   ########.fr       */
+/*   Updated: 2023/04/11 00:26:39 by mrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void	ft_split_to_atio(int argc, char const *argv[], t_stack *stack_a)
 	if (ft_check_alpha(arg))
 		ft_print_error("Error:");
 	spliter = ft_split(arg, ' ');
+	free(arg);
 	num_ints = ft_length_of_spliter(spliter);
 	results = (int *)malloc(sizeof(int) * num_ints);
 	i = 0;
